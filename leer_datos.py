@@ -1,7 +1,7 @@
 import csv
 def leer_ventas(nombre_archivo): 
     try:
-        with open(nombre_archivo, 'r') as archivo:
+        with open(nombre_archivo, 'r', encoding='utf-8') as archivo: # Agrego codificación UTF-8 para que se puedan leer caracteres especiales correctamente
             lector_csv = csv.DictReader(archivo) #  Se crea un lector CSV que interpreta cada fila como un diccionario con claves basadas en los encabezados del archivo CSV
             ventas = [] # Lista para almacenar las ventas leídas del archivo CSV
             for fila in lector_csv:
@@ -20,5 +20,6 @@ def leer_ventas(nombre_archivo):
         print(f"Error al leer el archivo: {e}") # En el caso de que ocurra algún error durante la lectura del archivo, se muestra un mensaje de error
         return []
 
-ventas = leer_ventas('ventas.csv')
-print(ventas[0]) # Se imprime la primera venta leída del archivo CSV para verificar que se leyó correctamente.
+if __name__ == "__main__":
+    ventas = leer_ventas('ventas.csv')
+    print(ventas[0]) # Se imprime la primera venta leída del archivo CSV para verificar que se leyó correctamente.

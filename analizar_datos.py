@@ -10,5 +10,6 @@ def ingresos_por_genero(ventas):
             ingresos[genero] = ingreso # Si el género no existe en el diccionario de ingresos, se crea una nueva entrada con el ingreso actual
     return ingresos
 
-ventas = leer_ventas('ventas.csv')
-print(ingresos_por_genero(ventas)) # Se llama a la función ingresos_por_genero con la lista de ventas leídas del archivo CSV y se imprime el resultado, un diccionario con los ingresos totales por género.
+if __name__ == "__main__":
+    ventas = leer_ventas('ventas.csv')
+    print(ingresos_por_genero(ventas)) # Se llama a la función ingresos_por_genero con la lista de ventas leídas del archivo CSV y se imprime el resultado, un diccionario con los ingresos totales por género.

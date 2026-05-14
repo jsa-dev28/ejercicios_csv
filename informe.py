@@ -9,4 +9,5 @@ def generar_informe(nombre_archivo):
         print(f"{genero}: ${ingreso}") # Imprime el género y el ingreso 
     print(f"Ingreso total: ${ingreso_total}") # Imprime el ingreso total
 
-generar_informe('ventas.csv') # Llama a la función generar_informe con el nombre del archivo CSV para generar e imprimir el informe.
+if __name__ == "__main__":
+    generar_informe('ventas.csv') # Llama a la función generar_informe con el nombre del archivo CSV para generar e imprimir el informe.
